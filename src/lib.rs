@@ -1,4 +1,5 @@
 pub mod aes;
+pub mod sha;
 
 use hex::{FromHex, FromHexError};
 
