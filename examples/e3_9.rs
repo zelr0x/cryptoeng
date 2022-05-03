@@ -1,4 +1,4 @@
-use ch3::{AES256, hex2b};
+use cryptoeng::{AES256, hex2b};
 
 fn main() {
     let k = hex2b(
@@ -10,12 +10,12 @@ fn main() {
         .unwrap()
         .try_into()
         .unwrap();
-    let mut m: [u8; 16] = hex2b("53 9B 33 3B 39 70 6D 14 90 28 CF E1 D9 D4 A4 07")
+    let mut m: [u8; 16] = hex2b("29 6C 93 FD F4 99 AA EB 41 94 BA BC 2E 63 56 1D")
         .unwrap()
         .try_into()
         .unwrap();
     let c = AES256::new(&k);
-    c.dec_mut(&mut m);
+    c.enc_mut(&mut m);
     println!("{}", hex::encode(&m));
 }
 
