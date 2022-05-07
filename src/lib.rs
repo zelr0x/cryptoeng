@@ -1,4 +1,5 @@
 pub mod aes;
+pub mod random;
 pub mod sha;
 
 use hex::{FromHex, FromHexError};
