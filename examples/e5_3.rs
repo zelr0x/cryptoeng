@@ -11,8 +11,8 @@ struct CollisionData {
 fn main() {
     for n in (8..=48).step_by(8) {
         let before = Instant::now();
-        let elapsed = before.elapsed();
         let CollisionData{ original, collision, hash, attempts } = bday_sha512n(n);
+        let elapsed = before.elapsed();
         println!(
             r#"SHA-512-{} collision found after {} attempts taking a total of {:.2?}
     collision:
