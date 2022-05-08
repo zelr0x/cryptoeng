@@ -23,15 +23,15 @@ fn main() {
             n,
             attempts,
             elapsed,
-            String::from_utf8_lossy(&original),
-            String::from_utf8_lossy(&collision),
+            hex::encode(&original),
+            hex::encode(&collision),
             hex::encode(&hash)
         );
     }
 }
 
 fn bday_sha512n(n: usize) -> CollisionData {
-    let c_len = n * 64; // 1..=64 byte long random byte seq
+    let c_len = n; // 1..=64 byte long random byte seq
     let mut seen: HashMap<Vec<u8>, Vec<u8>> = HashMap::with_capacity(
         2u32.pow((n/2).try_into().unwrap()) as usize);
     let mut attempts = 0;
