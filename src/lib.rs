@@ -1,4 +1,5 @@
 pub mod aes;
+pub mod key;
 pub mod mac;
 pub mod random;
 pub mod sha;
