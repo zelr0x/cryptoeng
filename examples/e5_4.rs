@@ -1,5 +1,5 @@
+use cryptoeng::{hex2b, random, sha::sha512n};
 use std::time::Instant;
-use cryptoeng::{sha::sha512n, hex2b, random};
 
 fn main() {
     let tasks: Vec<(Vec<u8>, usize)> = vec![
@@ -26,7 +26,7 @@ fn find_preimage(hash: &[u8], n: usize) -> Vec<u8> {
     loop {
         let c = random::alnum(n);
         if &sha512n(&c, n) == hash {
-            return c
+            return c;
         }
     }
 }

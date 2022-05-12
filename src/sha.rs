@@ -54,7 +54,7 @@ fn hsbits(bytes: &[u8], n: usize) -> Vec<u8> {
 }
 
 /// Isolates n highest significance bits of a given byte.
-/// 
+///
 /// Panics:
 ///   if `n` > 8
 fn byte_hsbits(b: u8, n: usize) -> u8 {
